@@ -140,11 +140,11 @@ exercicio10 = () => {
   let err = document.getElementById("erro");
   let i = 1;
   if (nume > 0) {
+    somar += i;
+    resp.innerHTML = `a soma dos números entre 0 e ${nume} = ${soma}`;
     while (i <= nume) {
       err.innerHTML = "";
-      somar += i;
       let media = somar / nume;
-      resp.innerHTML = ``;
 
       i++;
     }
