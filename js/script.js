@@ -140,11 +140,11 @@ exercicio10 = () => {
   let err = document.getElementById("erro");
   let i = 1;
   if (nume > 0) {
-    somar += i;
-    resp.innerHTML = `a soma dos números entre 0 e ${nume} = ${soma}`;
     while (i <= nume) {
-      err.innerHTML = "";
+      somar += i;
       let media = somar / nume;
+      err.innerHTML = "";
+      resp.innerHTML = `a soma dos números entre 0 e ${nume} = ${somar} | a media = ${media} `;
 
       i++;
     }
@@ -170,8 +170,8 @@ exercicio12 = () => {
   let err = document.getElementById("erro");
   let soma = 0;
   if (coleta > 0) {
-    for (let i = 1; i <= coleta; i++) {
-      soma += i;
+    for (let i = 1; i <= coleta.length; i++) {
+      soma += parseInt(coleta.charAt(coleta.length-i));
       resp.innerHTML = "";
       err.innerHTML = "";
       resp.innerHTML = soma;
@@ -183,7 +183,118 @@ exercicio12 = () => {
 };
 
 exercicio13 = () => {
+  let pegar1 = document.getElementById("num1").value;
+  let pegar2 = document.getElementById("num2").value;
+  let resp = document.getElementById("resultado");
+  let cont = 0;
+  let cont2 = 0;
+  let err = document.getElementById("erro");
+  
+};
+
+exercicio14 = () => {
+  let pegar1 = document.getElementById("num1").value;
+  let pegar2 = document.getElementById("num2").value;
+  let resp = document.getElementById("resultado");
+  let err = document.getElementById("erro");
+  if (pegar1 <= 0 || pegar2 <= 0) {
+    resp.innerHTML = "";
+    err.innerHTML = `informe um numero positivo`;
+  } else {
+    let area = pegar1 * pegar2 /2;
+    err.innerHTML = "";
+    resp.innerHTML = `o poligono de lado ${pegar1} e comprimento ${pegar2} possui uma area de ${area}`;
+  }
+};
+
+exercicio15 = () => {
+  let pala = document.getElementById("palavra").value;
+  console.log(pala.length);
+  let vog = [a, e, i, o, u];
+  for (let i = 0; i < pala.length; i++) {
+    for (let l = 0; l < vog.length; l++) {
+      if (pala.charAt(i) == vog[l]) {
+        console.log(pala.charAt(i));
+      }
+    }
+  }
+};
+
+exercicio16 = () => {
+  let reaio = document.getElementById("num1").value;
+  let resp = document.getElementById("resultado");
+  let err = document.getElementById("erro");
+  let areaCir = 0;
+  if (reaio > 0) {
+    areaCir = reaio**2 * 3.14;
+    err.innerHTML = "";
+    resp.innerHTML = `a area do circulo de raio ${reaio} é = ${areaCir}`;
+  } else {
+    resp.innerHTML = "";
+    err.innerHTML = "informe um numero positivo";
+  }
+};
+
+exercicio17 = () => {
+  let base = document.getElementById("num1").value;
+  let altura = document.getElementById("num2").value;
+  let resp = document.getElementById("resultado");
+  let err = document.getElementById("erro");
+  let areatri = 0;
+  if (base > 0 && altura > 0) {
+    areatri = (base * altura) / 2;
+    err.innerHTML = "";
+    resp.innerHTML = `um triangulo de base = ${base} e de altura = ${altura} é = ${areatri}`;
+  } else {
+    resp.innerHTML = "";
+    err.innerHTML = "informe um numero positivo";
+  }
+};
+
+exercicio18 = () => {
+  let basemaior = document.getElementById("num1").value;
+  let basemenor = document.getElementById("num2").value;
+  let altura = document.getElementById("num3").value;
+  let resp = document.getElementById("resultado");
+  let err = document.getElementById("erro");
+  let areatra = ((basemaior + basemenor) * altura) / 2;
+  if (basemaior <= 0 || basemenor <= 0 || altura <= 0) {
+    resp.innerHTML = "";
+    err.innerHTML = "informe um numero positivo";
+  } else {
+    err.innerHTML = "";
+    resp.innerHTML = `a area de um trapezio de base maior = ${basemaior}, base menor = ${basemenor} e altura = ${altura} é = ${areatra}`;
+  }
+};
+
+exercicio19 = () => {};
+
+exercicio22 = () => {
+  let num = document.getElementById("num").value;
+  let result = document.getElementById("resultado");
+  let error = document.getElementById("erro");
+
+  let soma = 0;
+  result.innerText = "";
+
+  soma += parseInt(num);
+  while (soma <= 100) {
+    let numero = parseInt(prompt("Informe mais um numero"));
+    if (isNaN(numero) || numero <= 0) {
+      numero = parseInt(prompt("Número Invalido, Informe novamente"));
+    } else {
+      soma += numero;
+    }
+  }
+
+  result.innerText = `A o total da soma é: ${soma}`;
+};
+
+exercicio25=()=>{  
   let pegar1=document.getElementById("num1").value
   let pegar2=document.getElementById("num2").value
+  let pegar3=document.getElementById("num3").value
   let resp=document.getElementById("resultado")
-};
+  let err=document.getElementById("erro")
+  
+}
